@@ -21,7 +21,7 @@ def ahnlab_parsing():
         c.execute("SELECT link FROM data WHERE link=(?)",(link,))                       # db내 해당 url이 존재하는지 질의
         db_data = c.fetchone()                                                          # 조회한 결과값 반환
         
-        if db_data is None: # 결과값이 없을 시
+        if db_data is None:                                                                       # 결과값이 없을 시
             c.execute("INSERT INTO data VALUES(?,?)", info)                                       # db에 해당 info(url, 제목)를 추가
             headers = {'Content-type': 'application/json; charset=utf-8'}                         # Slack에 업로드를 위해 html header 값 수정
             data = "{'text':" + "'" + "`안랩ASEC`" +" "+ title + '\n' + link + '\n' + "'}"        # Slack에 업로드 되어질 내용 수정
