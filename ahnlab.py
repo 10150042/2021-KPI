@@ -26,3 +26,5 @@ def ahnlab_parsing():
             headers = {'Content-type': 'application/json; charset=utf-8'}                         # Slack에 업로드를 위해 html header 값 수정
             data = "{'text':" + "'" + "`안랩ASEC`" +" "+ title + '\n' + link + '\n' + "'}"        # Slack에 업로드 되어질 내용 수정
             response = requests.post('webhook url', headers=headers, data=data.encode('utf-8'))   # Slack webhook 을 통해 웹 파싱된 내용 업로드
+
+            
