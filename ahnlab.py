@@ -25,4 +25,4 @@ def ahnlab_parsing():
             c.execute("INSERT INTO data VALUES(?,?)", info)
             headers = {'Content-type': 'application/json; charset=utf-8'}
             data = "{'text':" + "'" + "`안랩ASEC`" +" "+ title + '\n' + link + '\n' + "'}"
-            response = requests.post('https://hooks.slack.com/services/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', headers=headers, data=data.encode('utf-8'))
+            response = requests.post('webhook url', headers=headers, data=data.encode('utf-8'))
