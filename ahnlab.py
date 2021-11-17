@@ -1,5 +1,5 @@
 #-*-coding:utf-8-*-             # 한글표현을 위해 utf-8 인코딩 명시
-from bs4 import BeautifulSoup   # 파이썬 웹 파싱 라이브러리 중 하나인 bs4(beautifulsoup 4)에서 BeautifulSoup 임포트
+from bs4 import BeautifulSoup   # 파이썬 웹 파싱 라이브러리 중 하나인 bs4(beautifulsoup 4)모듈에서 BeautifulSoup 함수 임포트
 import requests                 # 웹 request를 위해 requests 모듈 임포트
 import sqlite3                  # DB사용을 위한 sqlite3 모듈 임포트
 
@@ -10,7 +10,7 @@ def ahnlab_parsing():
     context = soup.find_all(class_='posttitle')             # 기사 내 특정부분을 파싱하기 위해 전체 class 태그 내 값이 'posttitle' 인 태그 전체를 context 배열에 저장
     
     for i in range(5):
-        link = context[i].a.attrs['href']                                               # 추출한 값 내부에 하이퍼링크 url 값을 추출
+        link = context[i].a.attrs['href']                                               # 추출한 값 내부 url 값을 추출
         title = context[i].text                                                         # 기사 제목 추출
         title = title.replace("\n", "").replace("				","")   # 기사 제목 마지막에 존재하는 공백 제거
         title = title.replace("\"", "")                                                 # 제목 내 '"'은 공백으로 치환
